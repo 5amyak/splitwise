@@ -1,7 +1,8 @@
-package com.example.splitwise.splitter;
+package com.example.splitwise.splitter.impl;
 
 import com.example.splitwise.dto.ExpenseDto;
 import com.example.splitwise.dto.TransactionDto;
+import com.example.splitwise.splitter.ExpenseSplitter;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
