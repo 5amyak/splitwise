@@ -9,6 +9,9 @@ import java.util.stream.Collectors;
 
 public class UserGroupMapper {
 
+    private UserGroupMapper() {
+    }
+
     public static UserGroupDto toUserGroupDto(UserGroup userGroup, ModelMapper modelMapper) {
         return new UserGroupDto()
                 .setUserGroupId(userGroup.getId())

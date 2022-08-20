@@ -10,9 +10,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -21,7 +21,6 @@ import java.util.List;
 public class ExpenseController {
 
     private final ExpenseService expenseService;
-    private final LocalDateTime LOCAL_DATE_TIME_MIN = LocalDateTime.MIN;
 
     @Autowired
     public ExpenseController(ExpenseService expenseService) {
@@ -29,7 +28,7 @@ public class ExpenseController {
     }
 
     @PostMapping
-    public ResponseEntity<ExpenseDto> addExpense(@RequestBody ExpenseDto expenseDto) {
+    public ResponseEntity<ExpenseDto> addExpense(@RequestBody @Valid ExpenseDto expenseDto) {
         try {
             expenseDto = expenseService.addExpense(expenseDto);
 

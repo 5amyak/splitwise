@@ -45,8 +45,7 @@ public class UserGroupController {
             UserGroupDto userGroupDto = userGroupService.addUsersToUserGroup(userGroupId, emailList);
 
             log.info("Users added successfully to user group with id :: {}", userGroupDto.getUserGroupId());
-            return ResponseEntity
-                    .ok()
+            return ResponseEntity.ok()
                     .body(userGroupDto);
         } catch (Exception e) {
             log.error("Failed to add users to user group due to {}", e.getMessage());

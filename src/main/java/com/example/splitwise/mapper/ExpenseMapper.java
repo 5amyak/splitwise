@@ -13,6 +13,9 @@ import java.util.stream.Collectors;
 
 public class ExpenseMapper {
 
+    private ExpenseMapper() {
+    }
+
     public static Expense toExpense(ExpenseDto expenseDto, ModelMapper modelMapper) {
         Expense expense = modelMapper.map(expenseDto, Expense.class);
         Set<Transaction> transactionSet = expenseDto.getTransactionDtoList()
