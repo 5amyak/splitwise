@@ -34,7 +34,7 @@ public class ExactExpenseSplitter implements ExpenseSplitter {
         if (expenseDto.getAmountDistributionMap() == null || expenseDto.getAmountDistributionMap().isEmpty()) {
             throw new IllegalArgumentException("Invalid input. Amount distribution cannot be null for exact expense");
         }
-        if (expenseDto.getAmountDistributionMap().size() != expenseDto.getInvolvedUserIds().size()) {
+        if (!expenseDto.getAmountDistributionMap().keySet().containsAll(expenseDto.getInvolvedUserIds())) {
             throw new IllegalArgumentException("Invalid input. Distribution info missing for few users");
         }
         Double totalAmt = expenseDto.getAmountDistributionMap().values().stream()
